@@ -33,7 +33,7 @@ jobs:
 
       - name: Authenticate to Google Cloud
         working-directory: ${{ github.workspace }}
-        run: echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > ./gcp-key.json
+        run: echo '${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}' > ./gcp-key.json
 
       - name: Run dbt
         run: dbt run
