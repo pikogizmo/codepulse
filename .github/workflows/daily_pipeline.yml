@@ -37,3 +37,9 @@ jobs:
 
       - name: Run dbt
         run: dbt run
+
+      - name: Run tests
+        run: dbt test
+
+      - name: Generate docs
+        run: dbt docs generate

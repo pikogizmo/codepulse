@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stg_github_events
+    description: Raw GitHub events from the last 7 days
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: type
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+
+  - name: stg_github_pushes
+    description: Push events with bots filtered out
+    columns:
+      - name: push_id
+        tests:
+          - not_null
+      - name: repo_name
+        tests:
+          - not_null
+      - name: actor_name
+        tests:
+          - not_null
+
+  - name: top_active_repos
+    description: Top 10 repositories by push count
+    columns:
+      - name: repo_name
+        tests:
+          - not_null
+          - unique
+      - name: push_count
+        tests:
+          - not_null
+
+  - name: daily_activity
+    description: Daily event counts by type
+
+  - name: event_breakdown
+    description: Total events by type
