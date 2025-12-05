@@ -4,7 +4,7 @@ A data pipeline that pulls GitHub events from the public GitHub Archive and tran
 
 ## Dashboard
 
-[View Live Dashboard](https://lookerstudio.google.com/reporting/05a3cdc4-4aff-4c2d-8443-d8f24e93947d)
+[View Live Dashboard](https://lookerstudio.google.com/reporting/05a3cdc4-4aff-4c2d-8443-d8f24e93947d) · [View dbt Docs](https://pikogizmo.github.io/codepulse/)
 
 ## How it works
 
