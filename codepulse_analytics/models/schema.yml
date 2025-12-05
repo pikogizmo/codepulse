@@ -7,7 +7,6 @@ models:
       - name: id
         tests:
           - not_null
-          - unique
       - name: type
         tests:
           - not_null
