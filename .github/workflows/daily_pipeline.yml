@@ -6,11 +6,18 @@ on:
   workflow_dispatch:
 
 env:
-  DBT_PROFILES_DIR: ./
+  DBT_PROFILES_DIR: ${{ github.workspace }}/codepulse_analytics
+  GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp-key.json
+  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  DBT_DATASET: ${{ secrets.DBT_DATASET }}
 
 jobs:
   run_pipeline:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: codepulse_analytics
 
     steps:
       - name: Checkout code
@@ -25,6 +32,7 @@ jobs:
         run: pip install dbt-bigquery
 
       - name: Authenticate to Google Cloud
+        working-directory: ${{ github.workspace }}
         run: echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > ./gcp-key.json
 
       - name: Run dbt
