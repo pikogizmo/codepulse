@@ -5,6 +5,11 @@ on:
     - cron: '0 6 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 env:
   DBT_PROFILES_DIR: ${{ github.workspace }}/codepulse_analytics
   GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp-key.json
@@ -43,3 +48,19 @@ jobs:
 
       - name: Generate docs
         run: dbt docs generate
+
+      - name: Upload docs
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: codepulse_analytics/target
+
+  deploy_docs:
+    needs: run_pipeline
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
