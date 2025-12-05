@@ -5,8 +5,8 @@ codepulse_analytics:
       type: bigquery
       method: service-account
       project: "{{ env_var('GCP_PROJECT_ID') }}"
-      dataset: "{{ env_var('DBT_DATASET', 'codepulse') }}"
-      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS', '../gcp-key.json') }}"
+      schema: codepulse
+      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
       threads: 4
       timeout_seconds: 300
       location: US
