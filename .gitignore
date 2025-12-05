@@ -1,2 +1,26 @@
-#ignore gcp_key
+# Secrets and credentials
 gcp-key.json
+*.pem
+*.key
+.env
+.env.*
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs
+logs/
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# dbt artifacts
+target/
+dbt_packages/
+dbt_modules/
