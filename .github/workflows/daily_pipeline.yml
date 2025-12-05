@@ -1,0 +1,31 @@
+name: Daily CodePulse Pipeline
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+env:
+  DBT_PROFILES_DIR: ./
+
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dbt
+        run: pip install dbt-bigquery
+
+      - name: Authenticate to Google Cloud
+        run: echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > ./gcp-key.json
+
+      - name: Run dbt
+        run: dbt run

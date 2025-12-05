@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: github_archive
+    description: "Public GitHub timeline data"
+    database: githubarchive
+    schema: day
+    tables:
+      - name: "20240101"
+        description: "Events from New Years Day 2024"

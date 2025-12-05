@@ -1,0 +1,104 @@
+[0m23:42:08.187952 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7051b8477260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7051b8013560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7051b78a58b0>]}
+
+
+============================== 23:42:08.190258 | ab734017-1cb6-44bf-84c6-eb761f4ccf08 ==============================
+[0m23:42:08.190258 [info ] [MainThread]: Running with dbt=1.11.0-rc2
+[0m23:42:08.190579 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'warn_error': 'None', 'static_parser': 'True', 'log_format': 'default', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'profiles_dir': '/home/pikogizmo/.dbt', 'partial_parse': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'quiet': 'False', 'invocation_command': 'dbt init codepulse_analytics', 'introspect': 'True', 'printer_width': '80', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'target_path': 'None'}
+[0m23:42:08.195314 [debug] [MainThread]: Starter project path: /home/pikogizmo/projects/codepulse/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m23:42:08.199394 [info ] [MainThread]: 
+Your new dbt project "codepulse_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:42:08.199637 [info ] [MainThread]: Setting up your profile.
+[0m23:44:43.701723 [info ] [MainThread]: Profile codepulse_analytics written to /home/pikogizmo/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:44:43.702663 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 148.4713, "process_in_blocks": "2320", "process_kernel_time": 0.702792, "process_mem_max_rss": "366288", "process_out_blocks": "80", "process_user_time": 2.401265}
+[0m23:44:43.703102 [debug] [MainThread]: Command `dbt init` succeeded at 23:44:43.703038 after 148.47 seconds
+[0m23:44:43.703349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7051b7ddf170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70518d172510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70518e507d10>]}
+[0m23:44:43.703599 [debug] [MainThread]: Flushing usage events
+[0m23:44:44.237948 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:45:14.081915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfbceeb6510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfbcd143da0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfbcc939100>]}
+
+
+============================== 23:45:14.084905 | 306f4528-acfc-4cf6-bde3-4e77d0d920c3 ==============================
+[0m23:45:14.084905 [info ] [MainThread]: Running with dbt=1.11.0-rc2
+[0m23:45:14.085272 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'partial_parse': 'True', 'static_parser': 'True', 'log_format': 'default', 'log_path': 'logs', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt debug', 'empty': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'write_json': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'warn_error': 'None', 'introspect': 'True', 'profiles_dir': '/home/pikogizmo/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'quiet': 'False', 'printer_width': '80', 'indirect_selection': 'eager', 'target_path': 'None'}
+[0m23:45:14.096799 [info ] [MainThread]: dbt version: 1.11.0-rc2
+[0m23:45:14.097080 [info ] [MainThread]: python version: 3.12.3
+[0m23:45:14.097376 [info ] [MainThread]: python path: /home/pikogizmo/projects/codepulse/.venv/bin/python3
+[0m23:45:14.097632 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m23:45:16.229659 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_HOST'
+[0m23:45:16.230121 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.1837494, "process_in_blocks": "251768", "process_kernel_time": 0.7849, "process_mem_max_rss": "367552", "process_out_blocks": "16", "process_user_time": 2.441}
+[0m23:45:16.230482 [debug] [MainThread]: Command `dbt debug` failed at 23:45:16.230399 after 2.18 seconds
+[0m23:45:16.230695 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfbcc498080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfbcc6c0bc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfba2bc5730>]}
+[0m23:45:16.230931 [debug] [MainThread]: Flushing usage events
+[0m23:45:16.745732 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:50:52.504229 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782336a61400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78233626f560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78233653fb90>]}
+
+
+============================== 23:50:52.507097 | 76dbaadb-9694-4b13-b65f-4c7f46ab616a ==============================
+[0m23:50:52.507097 [info ] [MainThread]: Running with dbt=1.11.0-rc2
+[0m23:50:52.507468 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'invocation_command': 'dbt debug', 'target_path': 'None', 'indirect_selection': 'eager', 'empty': 'None', 'log_format': 'default', 'profiles_dir': '/home/pikogizmo/.dbt', 'use_experimental_parser': 'False', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'printer_width': '80', 'quiet': 'False', 'version_check': 'True', 'log_cache_events': 'False', 'no_print': 'None', 'partial_parse': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'static_parser': 'True'}
+[0m23:50:52.518121 [info ] [MainThread]: dbt version: 1.11.0-rc2
+[0m23:50:52.518359 [info ] [MainThread]: python version: 3.12.3
+[0m23:50:52.518579 [info ] [MainThread]: python path: /home/pikogizmo/projects/codepulse/.venv/bin/python3
+[0m23:50:52.518809 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m23:50:54.752584 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.postgres'
+[0m23:50:54.753066 [info ] [MainThread]: Using profiles dir at /home/pikogizmo/.dbt
+[0m23:50:54.753306 [info ] [MainThread]: Using profiles.yml file at /home/pikogizmo/.dbt/profiles.yml
+[0m23:50:54.753555 [info ] [MainThread]: Using dbt_project.yml file at /home/pikogizmo/projects/codepulse/dbt_project.yml
+[0m23:50:54.753807 [info ] [MainThread]: Configuration:
+[0m23:50:54.754049 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m23:50:54.754267 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m23:50:54.754487 [info ] [MainThread]: Required dependencies:
+[0m23:50:54.754711 [debug] [MainThread]: Executing "git --help"
+[0m23:50:54.764063 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:50:54.764298 [debug] [MainThread]: STDERR: "b''"
+[0m23:50:54.764481 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:50:54.764699 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m23:50:54.764938 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m23:50:54.765165 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "dbt_analytics", target "dev" invalid: Runtime Error
+    Could not find adapter type postgres!
+
+
+[0m23:50:54.765382 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/pikogizmo/projects/codepulse/dbt_project.yml> not found
+
+[0m23:50:54.765801 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.294484, "process_in_blocks": "400200", "process_kernel_time": 0.849524, "process_mem_max_rss": "365460", "process_out_blocks": "16", "process_user_time": 2.476721}
+[0m23:50:54.766210 [debug] [MainThread]: Command `dbt debug` failed at 23:50:54.766146 after 2.29 seconds
+[0m23:50:54.766430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782335e68c80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78230d6953a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78230bd62330>]}
+[0m23:50:54.766671 [debug] [MainThread]: Flushing usage events
+[0m23:50:55.295586 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:12:47.908582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7582492e5490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x758249862f00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7582498991c0>]}
+
+
+============================== 00:12:47.911977 | e618df86-ae01-4999-b745-beb2f0825ca7 ==============================
+[0m00:12:47.911977 [info ] [MainThread]: Running with dbt=1.11.0-rc2
+[0m00:12:47.912334 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'log_path': 'logs', 'static_parser': 'True', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'False', 'target_path': 'None', 'no_print': 'None', 'partial_parse': 'True', 'log_format': 'default', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '/home/pikogizmo/.dbt', 'debug': 'False', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt run --select stg_github_events', 'use_colors': 'True', 'introspect': 'True', 'quiet': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'write_json': 'True'}
+[0m00:12:47.912594 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/pikogizmo/projects/codepulse/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:12:47.913466 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.037734136, "process_in_blocks": "50448", "process_kernel_time": 0.241515, "process_mem_max_rss": "99072", "process_out_blocks": "16", "process_user_time": 0.787005}
+[0m00:12:47.913726 [debug] [MainThread]: Command `dbt run` failed at 00:12:47.913664 after 0.04 seconds
+[0m00:12:47.913930 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x758249392990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x758249945d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75824932c980>]}
+[0m00:12:47.914149 [debug] [MainThread]: Flushing usage events
+[0m00:12:48.441831 [debug] [MainThread]: An error was encountered while trying to flush usage events

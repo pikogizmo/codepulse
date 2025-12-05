@@ -1,0 +1,1 @@
+select * from {{ source('github_archive', '20240101') }}
