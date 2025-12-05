@@ -1,44 +1,28 @@
 # CodePulse
 
-Real-time analytics pipeline that processes GitHub events data using dbt and BigQuery.
+A data pipeline that pulls GitHub events from the public GitHub Archive and transforms them using dbt + BigQuery.
 
-## Architecture
+## How it works
 
 ```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  GitHub Archive │────▶│    BigQuery     │────▶│   dbt Models    │
-│   (source)      │     │   (warehouse)   │     │   (transform)   │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-                                                        │
-                              ┌─────────────────────────┘
-                              ▼
-                ┌──────────────────────────────┐
-                │      GitHub Actions          │
-                │   (scheduled daily @ 6AM)    │
-                └──────────────────────────────┘
+GitHub Archive → BigQuery → dbt → Analytics tables
 ```
 
-## Data Flow
+The pipeline runs daily via GitHub Actions and builds three models:
 
-| Layer  | Model               | Description                    |
-|--------|---------------------|--------------------------------|
-| Bronze | `stg_github_events` | Raw events from GitHub Archive |
-| Silver | `stg_github_pushes` | Filtered push events           |
-| Gold   | `top_active_repos`  | Top 10 most active repos       |
+- `stg_github_events` - raw events from yesterday
+- `stg_github_pushes` - just the push events  
+- `top_active_repos` - top 10 repos by push count
 
-## Tech Stack
+## Stack
 
-- **dbt** - data transformation
-- **BigQuery** - data warehouse
-- **GitHub Actions** - orchestration
+- dbt (BigQuery adapter)
+- GitHub Actions for scheduling
 
-## Running Locally
+## Usage
 
 ```bash
 cd codepulse_analytics
 dbt run
 ```
 
-## Pipeline Schedule
-
-Runs daily at 6:00 AM UTC via GitHub Actions.
