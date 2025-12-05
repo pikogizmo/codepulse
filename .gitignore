@@ -1,26 +1,16 @@
-# Secrets and credentials
+# credentials
 gcp-key.json
 *.pem
 *.key
-.env
-.env.*
+.env*
 
-# Virtual environments
+# python
 .venv/
 venv/
-env/
-
-# Logs
-logs/
-*.log
-
-# Python cache
 __pycache__/
 *.pyc
-*.pyo
-.pytest_cache/
 
-# dbt artifacts
+# dbt
 target/
+logs/
 dbt_packages/
-dbt_modules/

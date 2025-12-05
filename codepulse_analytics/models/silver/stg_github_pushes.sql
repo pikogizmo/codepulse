@@ -1,6 +1,6 @@
-SELECT
-  created_at,
-  SAFE_CAST(JSON_VALUE(payload, '$.push_id') AS INT64) as push_id,
-  repo.name
-FROM {{ ref('stg_github_events') }}
-WHERE type = 'PushEvent'
+select
+    created_at,
+    safe_cast(json_value(payload, '$.push_id') as int64) as push_id,
+    repo.name as repo_name
+from {{ ref('stg_github_events') }}
+where type = 'PushEvent'

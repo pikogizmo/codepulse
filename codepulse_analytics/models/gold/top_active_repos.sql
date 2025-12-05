@@ -1,8 +1,8 @@
-SELECT
-name,
-COUNT(push_id) AS push_count
-FROM {{ ref('stg_github_pushes') }}
-GROUP BY name
-HAVING COUNT(push_id) <= 1000
-ORDER BY push_count DESC
-LIMIT 10
+select
+    repo_name,
+    count(*) as push_count
+from {{ ref('stg_github_pushes') }}
+group by repo_name
+having count(*) <= 1000
+order by push_count desc
+limit 10
