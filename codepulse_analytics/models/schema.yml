@@ -34,7 +34,7 @@ models:
         tests:
           - not_null
           - unique
-      - name: push_count
+      - name: total_pushes
         tests:
           - not_null
 
