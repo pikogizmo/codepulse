@@ -1,4 +1,3 @@
--- profiling model to find natural cutoffs
 select
     approx_quantiles(push_count, 100)[offset(50)] as p50,
     approx_quantiles(push_count, 100)[offset(90)] as p90,
