@@ -27,16 +27,57 @@ models:
         tests:
           - not_null
 
-  - name: top_active_repos
-    description: Top 10 repositories by push count
+  - name: developer_activity_metrics
+    description: Developer stats including push counts, active days, streaks, and activity tiers
     columns:
-      - name: repo_name
+      - name: actor_name
         tests:
           - not_null
           - unique
       - name: total_pushes
         tests:
           - not_null
+      - name: developer_tier
+        tests:
+          - accepted_values:
+              values: ['power_user', 'regular', 'casual']
+
+  - name: repository_health_scores
+    description: Repository health scoring based on contributor activity, retention, and velocity
+    columns:
+      - name: repo_name
+        tests:
+          - not_null
+          - unique
+      - name: health_score
+        tests:
+          - not_null
+      - name: health_tier
+        tests:
+          - accepted_values:
+              values: ['thriving', 'healthy', 'at_risk', 'declining']
+
+  - name: contribution_patterns
+    description: Activity heatmap by hour and day of week
+    columns:
+      - name: hour_of_day
+        tests:
+          - not_null
+      - name: day_of_week
+        tests:
+          - not_null
+
+  - name: anomaly_detection
+    description: Flags days with unusual activity using z-scores
+    columns:
+      - name: event_date
+        tests:
+          - not_null
+          - unique
+      - name: anomaly_type
+        tests:
+          - accepted_values:
+              values: ['spike', 'drop', 'normal']
 
   - name: daily_activity
     description: Daily event counts by type
