@@ -14,3 +14,4 @@ __pycache__/
 target/
 logs/
 dbt_packages/
+codepulse_analytics/.user.yml
