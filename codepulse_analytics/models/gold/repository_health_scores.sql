@@ -157,9 +157,9 @@ select
         case when activity_consistency_score < 1 then 15 else 15 - least(activity_consistency_score, 3) * 5 end
     , 1) as health_score,
     case
-        when collaboration_score >= 70 and velocity_trend > 0 then 'thriving'
-        when collaboration_score >= 50 then 'healthy'
-        when collaboration_score >= 30 then 'at_risk'
+        when collaboration_score >= 50 and velocity_trend > 0 then 'thriving'
+        when collaboration_score >= 25 then 'healthy'
+        when collaboration_score >= 10 then 'at_risk'
         else 'declining'
     end as health_tier
 from scored_repos

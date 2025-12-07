@@ -67,17 +67,15 @@ models:
         tests:
           - not_null
 
-  - name: anomaly_detection
-    description: Flags days with unusual activity using z-scores
+  - name: event_type_trends
+    description: Daily event counts by type for trend visualization
     columns:
       - name: event_date
         tests:
           - not_null
-          - unique
-      - name: anomaly_type
+      - name: event_type
         tests:
-          - accepted_values:
-              values: ['spike', 'drop', 'normal']
+          - not_null
 
   - name: daily_activity
     description: Daily event counts by type
